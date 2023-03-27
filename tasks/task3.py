@@ -28,3 +28,21 @@ inputs = [
 ]
 
 # тут ваше решение:
+def cnt_day(*args):
+    count = 0
+    last_idx = len(args) - 1
+
+    for i, value in enumerate(args):
+        if i == 0:
+            continue
+        if i != last_idx:
+            if args[i - 1] < value > args[i + 1]:
+                count += 1
+        else:
+            if args[i - 1] < value:
+                count += 1
+
+    return count
+
+
+print(cnt_day(1, 2, 3, 5, 4, 8))   # 2

@@ -21,3 +21,8 @@ inputs = [
 ]
 
 # тут ваше решение:
+for t1, t2 in inputs:
+    diff = set(t2) - set(t1)
+    print(*diff)
+
+

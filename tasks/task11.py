@@ -34,3 +34,18 @@ inputs = [
 ]
 
 # тут ваше решение:
+def merge_intervals(intervals):
+    intervals = sorted(intervals)
+    result = [intervals[0]]
+    for interval in intervals[1:]:
+        if interval[0] <= result[-1][1]:
+            result[-1] = (result[-1][0], max(result[-1][1], interval[1]))
+        else:
+            result.append(interval)
+    return result
+
+for ints in inputs:
+    intervals = [list(map(int, n.split())) for n in ints]
+    intervals = merge_intervals(intervals)
+    for interval in intervals:
+        print(interval[0], interval[1])

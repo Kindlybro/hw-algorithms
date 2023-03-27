@@ -16,6 +16,7 @@
 '''Формат вывода:
 Выведите в порядке неубывания простые множители, на которые раскладывается число n.
 '''
+import math
 
 # Пример ввода -> вывода:
 inputs = [
@@ -25,3 +26,13 @@ inputs = [
 ]
 
 # тут ваше решение:
+
+n = [int(i) for i in inputs]
+for chislo in n:
+    for i in range(2, int(math.sqrt(chislo))+1):
+        while chislo % i == 0:
+            print(i, sep=' ')
+            chislo //= i
+
+    if chislo > 1:
+        print(chislo, end=' ')

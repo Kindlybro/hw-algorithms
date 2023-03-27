@@ -24,3 +24,10 @@ inputs = [
 ]
 
 # тут ваше решение:
+inputs = [int(i) for i in inputs]
+for i in inputs:
+    sqrt = i ** (0.5)
+    if i % 4 == 0:
+        print(True)
+    else:
+        print(False)
